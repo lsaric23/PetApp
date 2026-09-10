@@ -1,4 +1,4 @@
-package org.unizd.rma.saric.domain.usecases.contact
+package org.unizd.rma.saric.domain.usecases.pet
 
 import org.unizd.rma.saric.domain.repositories.PetRepository
 import javax.inject.Inject
