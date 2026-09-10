@@ -135,7 +135,7 @@ class AddPetViewModel @Inject constructor(
     private fun validateForm(): Boolean {
         return _ime.value.isNotBlank() &&
                 _pasmina.value.isNotBlank() &&
-                _vrstaZivotinje.isNotBlank() &&
+                _vrstaZivotinje.toString().isNotBlank() &&
                 _datumPosvojenja.value > 0
     }
 

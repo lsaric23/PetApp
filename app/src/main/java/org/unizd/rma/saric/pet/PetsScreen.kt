@@ -29,6 +29,7 @@ import org.unizd.rma.saric.presentation.components.EmptyScreen
 import org.unizd.rma.saric.presentation.components.ErrorScreen
 import org.unizd.rma.saric.presentation.components.PetsList
 import org.unizd.rma.saric.presentation.components.SearchBar
+import org.unizd.rma.saric.presentation.PetsUiState
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

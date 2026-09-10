@@ -8,9 +8,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import org.unizd.rma.saric.presentation.camera.CameraScreen
-import org.unizd.rma.saric.presentation.pet.PetsScreen
-import org.unizd.rma.saric.presentation.pet.create.AddPetScreen
-import org.unizd.rma.saric.presentation.pet.detail.PetDetailScreen
+import org.unizd.rma.saric.pet.PetsScreen
+import org.unizd.rma.saric.pet.create.AddPetScreen
+import org.unizd.rma.saric.pet.detail.PetDetailScreen
 
 sealed class Screen(val route: String) {
     object Pets : Screen("pets_screen")

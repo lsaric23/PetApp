@@ -5,7 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
-import com.prezime.petapp.data.database.entity.PetEntity
+import org.unizd.rma.saric.data.database.entity.PetEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao
