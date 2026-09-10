@@ -43,9 +43,6 @@ fun CameraScreen(
     onPhotoTaken: (photoPath: String) -> Unit,
     onBackClick: () -> Unit
 ) {
-    val cameraPermissionState = rememberPermissionState(
-        Manifest.permission.CAMERA
-    )
     LaunchedEffect(petId) {
         petDetailViewModel.loadPet(petId)
     }
@@ -59,6 +56,19 @@ fun CameraScreen(
             onPhotoTaken(photoPath)
         }
     }
+
+    // Launcher za traženje dopuštenja - ako korisnik dopusti, odmah otvara kameru
+    val permissionLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.RequestPermission()
+    ) { isGranted ->
+        if (isGranted) {
+            cameraLauncher.launch(null)
+        }
+    }
+
+    val cameraPermissionState = rememberPermissionState(
+        Manifest.permission.CAMERA
+    )
 
     Scaffold(
         topBar = {
@@ -84,7 +94,7 @@ fun CameraScreen(
                     if (cameraPermissionState.status.isGranted) {
                         cameraLauncher.launch(null)
                     } else {
-                        cameraPermissionState.launchPermissionRequest()
+                        permissionLauncher.launch(Manifest.permission.CAMERA)
                     }
                 },
                 modifier = Modifier.size(80.dp)
